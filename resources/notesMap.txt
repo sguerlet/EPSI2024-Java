@@ -1,0 +1,8 @@
+Pierre:13.2
+Anne:12
+Sarah:13.4
+Pierre:15.8
+Pierre:12.1
+Anne:14.5
+Sarah:10
+Simon:13.2
