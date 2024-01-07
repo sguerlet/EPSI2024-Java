@@ -29,3 +29,32 @@ Vous devriez obtenir évidemment comme résultat :
 ```
 42
 ```
+
+## TP : créer une classe avec méthode utilitaire
+
+Cette mise en pratique consiste à créer une seconde classe, différente de celle où le programme s'exécute (contenant la méthode `main`) et qui se trouve dans un package différent.
+
+On utilise également le principe d'encapsultaion pour "protéger" l'attribut représentant le caractère à inseerer afin d'éviter une modification hasardeuse de celui-ci et donc assurer une bonne utilisation de notre classe utilitaire.
+
+On obtient ce comportement en fixant sa visibilité à `private` et en ne permettant son renseignement que via le constructeur de la classe.
+
+### Classes concernées
+- [fr.epsi.string.TestStringUtil](fr/epsi/string/TestStringUtil.java)
+- [fr.epsi.string.util.StringUtil](fr/epsi/string/util/StringUtil.java)
+
+###  Procédure de compilation et exécution
+
+Puisque la classe `TestStringUtil` dépend de la classe `StringUtil`, celle-ci doit être compilée en premier. Ensuite, il suffit d'exécuter le programme en passant une chaine de caractères en paramètre de la ligne de commande
+
+```
+javac fr/epsi/string/util/StringUtil.java
+javac fr/epsi/string/TestStringUtil.java
+java fr.epsi.string.TestStringUtil coucou
+```
+
+qui devrait donner le résultat
+
+```
+Chaine modifiée avec '+' :c+o+u+c+o+u
+Chaine modifiée avec '_' :c_o_u_c_o_u
+```
