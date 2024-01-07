@@ -58,3 +58,52 @@ qui devrait donner le résultat
 Chaine modifiée avec '+' :c+o+u+c+o+u
 Chaine modifiée avec '_' :c_o_u_c_o_u
 ```
+
+## TP : Polygones - travail sur l'implémentation d'interface et héritage
+
+Cette mise en pratique des interfaces et héritage permet de se rendre compte qu'on peut manipuler des objets comme étant des type de leur classe parente ou bien leurs classes implémentées (rappel : on ne peut hériter que d'une autre classe en Java, tandis qu'on peut implémenter plusieurs interfaces)
+
+Le fait d'implémenter une interface peut s'apparenter à un _contrat de service_ (si ma classe implémente telle interface, alors je sais que je peut la solliciter via les méthodes définies dans cette interface)
+
+Dans le TP, ceci est illustré par les appels directs à `getSurface` ou bien indirect (via le tri de la liste) à `compareTo` de l'interface `Comparable`.
+
+### Classes concernées
+- [fr.epsi.polygone.Polygone](fr/epsi/polygone/Polygone.java) (l'interface)
+- [fr.epsi.polygone.QuadrilatereRectangle](fr/epsi/polygone/QuadrilatereRectangle.java) (la classe parente abstraite)
+- [fr.epsi.polygone.Carre](fr/epsi/polygone/Carre.java)
+- [fr.epsi.polygone.Rectangle](fr/epsi/polygone/Rectangle.java)
+- [fr.epsi.polygone.TestPolygone](fr/epsi/polygone/TestPolygone.java)
+
+###  Procédure de compilation et exécution
+
+Une compilation dans l'ordre est nécessaire (sauf pour Carre et Rectangle qu'on pourrait intervertir)
+
+```
+javac fr/epsi/polygone/Polygone.java
+javac fr/epsi/polygone/QuadrilatereRectangle
+javac fr/epsi/polygone/Carre
+javac fr/epsi/polygone/Rectangle
+javac fr/epsi/polygone/TestPolygone
+java fr.epsi.polygone.TestPolygone
+```
+
+le rendu sur la console est le suivant
+
+```
+Je suis un rectangle de largeur 9.0 et de longueur 4.0 / surface = 36.0
+Je suis un rectangle de largeur 5.0 et de longueur 2.0 / surface = 10.0
+Je suis un carré de côté 4.0 / surface = 16.0
+Je suis un carré de côté 5.0 / surface = 25.0
+Je suis un carré de côté 3.0 / surface = 9.0
+Liste après le tri :
+Je suis un carré de côté 3.0 / surface = 9.0
+Je suis un rectangle de largeur 5.0 et de longueur 2.0 / surface = 10.0
+Je suis un carré de côté 4.0 / surface = 16.0
+Je suis un carré de côté 5.0 / surface = 25.0
+Je suis un rectangle de largeur 9.0 et de longueur 4.0 / surface = 36.0
+Test de type de classe
+carre instanceof Carre : true
+carre instanceof QuadrilatereRectangle : true
+carre instanceof Polygone : true
+Polygone.class.isAssignableFrom(carre.getClass()) : true
+```
