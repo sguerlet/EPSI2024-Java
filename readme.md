@@ -107,3 +107,24 @@ carre instanceof QuadrilatereRectangle : true
 carre instanceof Polygone : true
 Polygone.class.isAssignableFrom(carre.getClass()) : true
 ```
+
+## TP : Principes d'encapsulation et gestion des Exceptions
+
+Les principes d'encapsulation sont indispensables pour **protéger** le comportement de son code, soit d'une mauvaise utilisation par le développeur, soit d'une tentative de détournement d'usage par un utilisateur mal intentionné...
+Le principe général consiste à n'exposer que les attribut et méthodes strictement nécessaires, et masquer le reste (considéré comme relevant du fonctionnement interne du système). On parle habituellement d'un comportement en **boîte noire**. En Java, on utilise les _modifiers_ `public` et `private` sur les attributs et méthodes de classes pour atteindre ce comportement.
+
+L'appel de méthodes peut potentiellement générer des erreurs qui seront gérées en dehors du flux d'exécution standard (se reporter au [support du cours](Java%20-%20les%20fondamentaux%202023-2024.pdf) pour plus de détail). Une classe d'exception spécifique à notre contexte métier a été créée pour l'occasion. Le mot clef `thows` permet de déclarer qu'une méthode lève potentiellement une `Exception`, tandis que le mot clef `throw` permet de lever une instance d'`Exception` en cas d'erreur.
+
+### Classes concernées
+- [fr.epsi.bank.BankAccount](fr/epsi/bank/BankAccount.java) : la représentation objet d'un compte bancaire et de son fonctionnement
+- [fr.epsi.bank.BankAccountException](fr/epsi/bank/BankAccountException.java) : l'_Exception_ représentant une opération bancaire non valide
+- [fr.epsi.bank.TestBankAccount](fr/epsi/bank/TestBankAccount.java) : La classe de test
+
+## TP : Manipulation des fichiers
+
+En Java, la gestion des I/O de base (y compris les fichiers) se fait en bas niveau avec le package historique [java.io](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/package-summary.html) et de manière plus moderne avec les classes du package [java.nio](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/nio/package-summary.html) et plus particulièrement [java.nio.file](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/nio/file/package-summary.html) pour la gestion des fichiers.
+
+La classe utilitaire [java.nio.file.Files](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/nio/file/Files.html) contient un ensemble de méthodes statiques (utilitaires) permettant par exemple de lire le contenu d'un fichier et de le restituer sous une liste d'objets String : [Files.readAllLines](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/nio/file/Files.html#readAllLines(java.nio.file.Path))
+
+### Classes concernées
+- [fr.epsi.file.CalculMoyenne](fr/epsi/file/CalculMoyenne.java) : calcule la moyenne des élèves à partir du fichier [notes.txt](resources/notes.txt)
