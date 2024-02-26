@@ -137,3 +137,8 @@ Autre méthode utile, [keySet()](https://docs.oracle.com/en/java/javase/21/docs/
 
 ### Classes concernées
 - [fr.epsi.map.NotesMap](fr/epsi/map/NotesMap.java) : regroupe les notes par élève, puis les trie et calcule la moyenne des élèves à partir du fichier [notesMap.txt](resources/notesMap.txt)
+
+## Examen - Traitement d'un fichier de liste de vendeurs
+
+Le package [fr.epsi.vendeurs](fr/epsi/vendeurs/) contient une proposition de correction du [Sujet de l'examen](Sujet%20Java%20les%20fondamentaux%202024.pdf). 
+Le fichier à traiter est [resources/vendeurs.txt](resources/vendeurs.txt) 
