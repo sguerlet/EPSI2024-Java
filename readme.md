@@ -128,3 +128,12 @@ La classe utilitaire [java.nio.file.Files](https://docs.oracle.com/en/java/javas
 
 ### Classes concernées
 - [fr.epsi.file.CalculMoyenne](fr/epsi/file/CalculMoyenne.java) : calcule la moyenne des élèves à partir du fichier [notes.txt](resources/notes.txt)
+
+## TP : Travail sur la structure Map
+
+En Java, en plus des Collections comportant les structures les plus utilisées List et Set, une structure très utile est la Map représentée par l'interface [java.util.Map](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html). Elle permet d'associer une clef (key) à une valeur (Value),chacun pouvant être tout type d'objet choisi. La méthode [put(key, value)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html#put(K,V)) permet d'ajouter une entrée à la Map avec clef et valeur données, ou d'écraser la valeur si la clef est déjà existante. La méthode [get(key)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html#get(java.lang.Object)) permet de récupérer la valeur à une clef donnée, ou `null` si la clef n'est pas présente dans la Map.
+
+Autre méthode utile, [keySet()](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Map.html#keySet()) permet de récupérer l'ensemble des clefs présentes dans la Map et donc d'itérer dessus.
+
+### Classes concernées
+- [fr.epsi.map.NotesMap](fr/epsi/map/NotesMap.java) : regroupe les notes par élève, puis les trie et calcule la moyenne des élèves à partir du fichier [notesMap.txt](resources/notesMap.txt)
